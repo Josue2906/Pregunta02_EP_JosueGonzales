@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Formulario de Registro de Venta</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+        body {
+            background-color: #f4f4f9;
+        }
+        .form-container {
+            max-width: 600px;
+            margin-top: 50px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .form-header {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #007bff;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+    </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h3>Registro de Venta de Entradas</h3>
+                </div>
+                <form th:action="@{/registro}" th:object="${registroVenta}" method="post">
+                    <div class="form-group">
+                        <label for="nombres">Nombres</label>
+                        <input type="text" class="form-control" id="nombres" th:field="*{nombres}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos</label>
+                        <input type="text" class="form-control" id="apellidos" th:field="*{apellidos}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dni">Número de DNI</label>
+                        <input type="text" class="form-control" id="dni" th:field="*{dni}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="residencia">Lugar de Residencia</label>
+                        <input type="text" class="form-control" id="residencia" th:field="*{residencia}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emergenciaContacto">Número de Contacto de Emergencia</label>
+                        <input type="text" class="form-control" id="emergenciaContacto" th:field="*{emergenciaContacto}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Número de Teléfono Personal</label>
+                        <input type="text" class="form-control" id="telefono" th:field="*{telefono}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipoSangre">Tipo de Sangre</label>
+                        <input type="text" class="form-control" id="tipoSangre" th:field="*{tipoSangre}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="alergias">Alergias</label>
+                        <input type="text" class="form-control" id="alergias" th:field="*{alergias}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="km">Número de Kilómetros que va a Correr</label>
+                        <input type="number" class="form-control" id="km" th:field="*{km}" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+                </form>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
